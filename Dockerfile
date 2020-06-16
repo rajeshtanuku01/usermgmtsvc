@@ -19,6 +19,6 @@ ENV MSNAME=$MSNAME
 
 #RUN cd /usermgmt/target
 RUN pwd
-WORKDIR /usermgmt/target/
+#WORKDIR /usermgmt/target/
 COPY ${MSNAME}-${VERSION}.jar /apps/r2w/
 ENTRYPOINT ["java - jar  /apps/r2w/$MSNAME-$VERSION.jar"]
