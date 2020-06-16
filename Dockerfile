@@ -1,6 +1,5 @@
 FROM alpine:3.4
 
-
 RUN apk update && apk upgrade
 RUN apk --update add openjdk8-jre
 
@@ -20,5 +19,6 @@ ENV MSNAME=$MSNAME
 
 #RUN cd /usermgmt/target
 RUN pwd
-COPY /usermgmt/target/${MSNAME}-${VERSION}.jar /apps/r2w/
+WORKDIR /usermgmt/target/
+COPY ${MSNAME}-${VERSION}.jar /apps/r2w/
 ENTRYPOINT ["java - jar  /apps/r2w/$MSNAME-$VERSION.jar"]
