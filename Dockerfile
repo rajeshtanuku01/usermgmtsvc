@@ -18,6 +18,6 @@ ENV VERSION=$VERSION
 ARG MSNAME
 ENV MSNAME=$MSNAME
 
-RUN cd /var/lib/jenkins/workspace/usermgmt/target
+RUN cd /usermgmt/target
 COPY $MSNAME-$VERSION.jar /apps/r2w/
 ENTRYPOINT ["java - jar  /apps/r2w/$MSNAME-$VERSION.jar"]
